@@ -7,6 +7,11 @@ USER root
 RUN curl -sL https://deb.nodesource.com/setup_20.x | bash -
 RUN apt-get install -y nodejs
 
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends postgresql-client php-pgsql \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
+
 COPY --chown=www-data:www-data . /var/www/html
 
 USER www-data

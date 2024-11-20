@@ -1,0 +1,5 @@
+services:
+  app:
+    image: 'ghcr.io/devsarry/coolify-deploy:sha256-96ec3390dd08c406bbcccb361679f03d60c4ce3dad9a479d6a62f59f32f3f74b.sig'
+    volumes:
+      - './storage:/var/www/html/storage'
