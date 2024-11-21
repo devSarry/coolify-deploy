@@ -1,6 +1,6 @@
 services:
   app:
-    image: 'ghcr.io/devsarry/coolify-deploy:v1.0.0'
+    image: 'ghcr.io/devsarry/coolify-deploy:main'
     volumes:
       - './storage:/var/www/html/storage'
       - './database:/var/www/html/database'
