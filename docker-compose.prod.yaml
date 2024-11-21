@@ -1,8 +1,9 @@
 services:
   app:
-    image: 'ghcr.io/devsarry/coolify-deploy:main'
+    image: 'ghcr.io/devsarry/coolify-deploy:v1.0.0'
     volumes:
       - './storage:/var/www/html/storage'
+      - './database:/var/www/html/database'
     environment:
       PHP_FPM_POOL_NAME: "app"
       AUTORUN_ENABLED: '${AUTORUN_ENABLED}'
