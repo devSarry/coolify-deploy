@@ -3,7 +3,7 @@ services:
     image: 'ghcr.io/devsarry/coolify-deploy:main'
     volumes:
       - './storage:/var/www/html/storage'
-      - './database:/var/www/html/database'
+      - './database:/var/www/html/sqlite'
     environment:
       PHP_FPM_POOL_NAME: "app"
       AUTORUN_ENABLED: '${AUTORUN_ENABLED}'
