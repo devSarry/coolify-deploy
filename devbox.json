@@ -1,0 +1,19 @@
+{
+    "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.13.4/.schema/devbox.schema.json",
+    "packages": [
+        "php@8.3.13",
+        "nodejs@18",
+        "redis@latest",
+        "php81Packages.composer@latest"
+    ],
+    "shell": {
+        "init_hook": [
+            "echo 'Welcome to devbox!' > /dev/null",
+            "alias art=\"php artisan\""
+        ],
+        "scripts": {
+            "db:migrate": "php artisan migrate",
+            "dev": "composer run dev"
+        }
+    }
+}
