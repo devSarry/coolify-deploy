@@ -1,11 +1,19 @@
 {
     "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.13.4/.schema/devbox.schema.json",
-    "packages": [
-        "php@8.3.13",
-        "nodejs@18",
-        "redis@latest",
-        "php81Packages.composer@latest"
-    ],
+    "packages": {
+        "php83Packages.composer": "latest",
+        "php83Extensions.xdebug": "latest",
+        "php": "8.3",
+        "nodejs": "18",
+        "redis": "latest",
+        "glibcLocales": {
+            "version": "latest",
+            "platforms": [
+                "x86_64-linux",
+                "aarch64-linux"
+            ]
+        }
+    },
     "shell": {
         "init_hook": [
             "echo 'Welcome to devbox!' > /dev/null",

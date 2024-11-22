@@ -1,6 +1,34 @@
 {
   "lockfile_version": "1",
   "packages": {
+    "glibcLocales@latest": {
+      "last_modified": "2024-11-16T04:25:12Z",
+      "resolved": "github:NixOS/nixpkgs/34a626458d686f1b58139620a8b2793e9e123bba#glibcLocales",
+      "source": "devbox-search",
+      "version": "2.40-36",
+      "systems": {
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/1xx0sc6ykc3kqxbikipg33gbsc8wqlkl-glibc-locales-2.40-36",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/1xx0sc6ykc3kqxbikipg33gbsc8wqlkl-glibc-locales-2.40-36"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/7hivmh39qsl8abz86cfwc02lyqqbdw44-glibc-locales-2.40-36",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/7hivmh39qsl8abz86cfwc02lyqqbdw44-glibc-locales-2.40-36"
+        }
+      }
+    },
     "nodejs@18": {
       "last_modified": "2024-11-13T20:59:08Z",
       "plugin_version": "0.0.2",
@@ -66,9 +94,57 @@
         }
       }
     },
-    "php81Packages.composer@latest": {
+    "php83Extensions.xdebug@latest": {
       "last_modified": "2024-11-16T04:25:12Z",
-      "resolved": "github:NixOS/nixpkgs/34a626458d686f1b58139620a8b2793e9e123bba#php81Packages.composer",
+      "resolved": "github:NixOS/nixpkgs/34a626458d686f1b58139620a8b2793e9e123bba#php83Extensions.xdebug",
+      "source": "devbox-search",
+      "version": "3.3.2",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/r4993v6ik7mihy188218h09jvm468r0r-php-xdebug-3.3.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/r4993v6ik7mihy188218h09jvm468r0r-php-xdebug-3.3.2"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/589040l0mhp9jsrhxlm188gd00jrxaj0-php-xdebug-3.3.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/589040l0mhp9jsrhxlm188gd00jrxaj0-php-xdebug-3.3.2"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/y8s3274xpxaibx06qfrzj7991jwywbpq-php-xdebug-3.3.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/y8s3274xpxaibx06qfrzj7991jwywbpq-php-xdebug-3.3.2"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/rxqvaccab2ap2qmnihyn85yi5xp40rxr-php-xdebug-3.3.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/rxqvaccab2ap2qmnihyn85yi5xp40rxr-php-xdebug-3.3.2"
+        }
+      }
+    },
+    "php83Packages.composer@latest": {
+      "last_modified": "2024-11-16T04:25:12Z",
+      "resolved": "github:NixOS/nixpkgs/34a626458d686f1b58139620a8b2793e9e123bba#php83Packages.composer",
       "source": "devbox-search",
       "version": "2.8.1",
       "systems": {
@@ -76,45 +152,45 @@
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/2vqb526ilkbnqvsm0cbn1xp5xjxam7qy-composer-2.8.1",
+              "path": "/nix/store/z783rbfic7sqiaa0dz6zkjsy3k40znj8-composer-2.8.1",
               "default": true
             }
           ],
-          "store_path": "/nix/store/2vqb526ilkbnqvsm0cbn1xp5xjxam7qy-composer-2.8.1"
+          "store_path": "/nix/store/z783rbfic7sqiaa0dz6zkjsy3k40znj8-composer-2.8.1"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/a6bbmh34gspf4439jraz8lmkxxm3f3fh-composer-2.8.1",
+              "path": "/nix/store/46wg2d3b494y8a8avmjrhhxknzm2zkhv-composer-2.8.1",
               "default": true
             }
           ],
-          "store_path": "/nix/store/a6bbmh34gspf4439jraz8lmkxxm3f3fh-composer-2.8.1"
+          "store_path": "/nix/store/46wg2d3b494y8a8avmjrhhxknzm2zkhv-composer-2.8.1"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/vy5hsbfwarj8m57wbm8fbbc40l6c5bf7-composer-2.8.1",
+              "path": "/nix/store/rcvpzas98yxdggx26016p06xlfww8rqx-composer-2.8.1",
               "default": true
             }
           ],
-          "store_path": "/nix/store/vy5hsbfwarj8m57wbm8fbbc40l6c5bf7-composer-2.8.1"
+          "store_path": "/nix/store/rcvpzas98yxdggx26016p06xlfww8rqx-composer-2.8.1"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/npii5ag1j9znpwx313ipxf27l3266b1r-composer-2.8.1",
+              "path": "/nix/store/9wbyqqf173agra3f2gw11b5jcl4dzswq-composer-2.8.1",
               "default": true
             }
           ],
-          "store_path": "/nix/store/npii5ag1j9znpwx313ipxf27l3266b1r-composer-2.8.1"
+          "store_path": "/nix/store/9wbyqqf173agra3f2gw11b5jcl4dzswq-composer-2.8.1"
         }
       }
     },
-    "php@8.3.13": {
+    "php@8.3": {
       "last_modified": "2024-11-16T04:25:12Z",
       "plugin_version": "0.0.3",
       "resolved": "github:NixOS/nixpkgs/34a626458d686f1b58139620a8b2793e9e123bba#php83",
