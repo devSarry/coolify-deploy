@@ -1,8 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.13.4/.schema/devbox.schema.json",
     "packages": {
-        "php83Packages.composer": "latest",
-        "php83Extensions.xdebug": "latest",
         "php": "8.3",
         "nodejs": "18",
         "redis": "latest",
