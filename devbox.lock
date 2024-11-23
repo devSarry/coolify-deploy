@@ -1,0 +1,196 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "glibcLocales@latest": {
+      "last_modified": "2024-11-16T04:25:12Z",
+      "resolved": "github:NixOS/nixpkgs/34a626458d686f1b58139620a8b2793e9e123bba#glibcLocales",
+      "source": "devbox-search",
+      "version": "2.40-36",
+      "systems": {
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/1xx0sc6ykc3kqxbikipg33gbsc8wqlkl-glibc-locales-2.40-36",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/1xx0sc6ykc3kqxbikipg33gbsc8wqlkl-glibc-locales-2.40-36"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/7hivmh39qsl8abz86cfwc02lyqqbdw44-glibc-locales-2.40-36",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/7hivmh39qsl8abz86cfwc02lyqqbdw44-glibc-locales-2.40-36"
+        }
+      }
+    },
+    "nodejs@18": {
+      "last_modified": "2024-11-13T20:59:08Z",
+      "plugin_version": "0.0.2",
+      "resolved": "github:NixOS/nixpkgs/24f0d4acd634792badd6470134c387a3b039dace#nodejs_18",
+      "source": "devbox-search",
+      "version": "18.20.5",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/hq1mb5pgy44x0ik4hnkzirb0b2nxrcra-nodejs-18.20.5",
+              "default": true
+            },
+            {
+              "name": "libv8",
+              "path": "/nix/store/4i6k6064ls1qzpz6rbcjh7cniybb730z-nodejs-18.20.5-libv8"
+            }
+          ],
+          "store_path": "/nix/store/hq1mb5pgy44x0ik4hnkzirb0b2nxrcra-nodejs-18.20.5"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/qa34xfgbvrpdymlr31ai4vjym7pmvapn-nodejs-18.20.5",
+              "default": true
+            },
+            {
+              "name": "libv8",
+              "path": "/nix/store/wqi5b71jkvyw2lv81j2ydgchhywdrn1q-nodejs-18.20.5-libv8"
+            }
+          ],
+          "store_path": "/nix/store/qa34xfgbvrpdymlr31ai4vjym7pmvapn-nodejs-18.20.5"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/211dnaznay3942xf2gykgshcflcsr4f8-nodejs-18.20.5",
+              "default": true
+            },
+            {
+              "name": "libv8",
+              "path": "/nix/store/cc6k5wryplskfs7bbmcnzwvv2c3nh219-nodejs-18.20.5-libv8"
+            }
+          ],
+          "store_path": "/nix/store/211dnaznay3942xf2gykgshcflcsr4f8-nodejs-18.20.5"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/lbjqfs1dfy1q974aamvwi5rhlr9rmjm3-nodejs-18.20.5",
+              "default": true
+            },
+            {
+              "name": "libv8",
+              "path": "/nix/store/g0rxlz77mr86p2qllqjn3a9hi269j6xp-nodejs-18.20.5-libv8"
+            }
+          ],
+          "store_path": "/nix/store/lbjqfs1dfy1q974aamvwi5rhlr9rmjm3-nodejs-18.20.5"
+        }
+      }
+    },
+    "php@8.3": {
+      "last_modified": "2024-11-16T04:25:12Z",
+      "plugin_version": "0.0.3",
+      "resolved": "github:NixOS/nixpkgs/34a626458d686f1b58139620a8b2793e9e123bba#php83",
+      "source": "devbox-search",
+      "version": "8.3.13",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/mfhciqlprywca7n71mwfxwczk10jdxa0-php-with-extensions-8.3.13",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/mfhciqlprywca7n71mwfxwczk10jdxa0-php-with-extensions-8.3.13"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/sd2d5fizi6kvfg49gk7ik3f5f88731z2-php-with-extensions-8.3.13",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/sd2d5fizi6kvfg49gk7ik3f5f88731z2-php-with-extensions-8.3.13"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/svll1a64506chpjlsgj50hx8gw5j3b8b-php-with-extensions-8.3.13",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/svll1a64506chpjlsgj50hx8gw5j3b8b-php-with-extensions-8.3.13"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/r3lgaz85f2p8bvkx7z3d2qi1z4b1dn7k-php-with-extensions-8.3.13",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/r3lgaz85f2p8bvkx7z3d2qi1z4b1dn7k-php-with-extensions-8.3.13"
+        }
+      }
+    },
+    "redis@latest": {
+      "last_modified": "2024-11-16T04:25:12Z",
+      "plugin_version": "0.0.2",
+      "resolved": "github:NixOS/nixpkgs/34a626458d686f1b58139620a8b2793e9e123bba#redis",
+      "source": "devbox-search",
+      "version": "7.2.6",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/wkkl1sa3d1va56rpyvz2ihd2xd16hd4p-redis-7.2.6",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/wkkl1sa3d1va56rpyvz2ihd2xd16hd4p-redis-7.2.6"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/2rdd6fnpykqknhh3yrq1bav9ald5mkh8-redis-7.2.6",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/2rdd6fnpykqknhh3yrq1bav9ald5mkh8-redis-7.2.6"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/1rpq5w8rf7wxpdfx7ppphlwc2d8livs3-redis-7.2.6",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/1rpq5w8rf7wxpdfx7ppphlwc2d8livs3-redis-7.2.6"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/ff8wp3wzc27gpn3p90ng7pal4i1p9pf5-redis-7.2.6",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/ff8wp3wzc27gpn3p90ng7pal4i1p9pf5-redis-7.2.6"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+processes:
+  php-dev-server:
+    command: "php artisan serve"
+  npm-dev:
+    command: "npm run dev"
