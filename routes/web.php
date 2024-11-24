@@ -5,7 +5,14 @@ use Livewire\Volt\Volt;
 
 Route::view('/', 'welcome');
 
-Volt::route('/movies', 'pages.movieprogram');
+Route::view('/poster', 'poster' );
+
+Volt::route('/movies', 'pages.movies.movieprogram')
+    ->name('movies');
+
+Volt::route('/movies/{id}', 'pages.movies.movieprogram')
+    ->name('public-movie-program');
+
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

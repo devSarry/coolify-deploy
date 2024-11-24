@@ -94,6 +94,54 @@
         }
       }
     },
+    "php83Extensions.redis@latest": {
+      "last_modified": "2024-11-16T04:25:12Z",
+      "resolved": "github:NixOS/nixpkgs/34a626458d686f1b58139620a8b2793e9e123bba#php83Extensions.redis",
+      "source": "devbox-search",
+      "version": "6.0.2",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/andddwys20pm4mlxyvc8hiipfv4lmyhn-php-redis-6.0.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/andddwys20pm4mlxyvc8hiipfv4lmyhn-php-redis-6.0.2"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/ikk86hk7mnl4lrkly9clyni327anb6sa-php-redis-6.0.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/ikk86hk7mnl4lrkly9clyni327anb6sa-php-redis-6.0.2"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/zjcsf1ypck2a90fhh8b1isha5a4vnlg9-php-redis-6.0.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/zjcsf1ypck2a90fhh8b1isha5a4vnlg9-php-redis-6.0.2"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/hwfg4jr1n4877pmxinid7dw6whjbzdqn-php-redis-6.0.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/hwfg4jr1n4877pmxinid7dw6whjbzdqn-php-redis-6.0.2"
+        }
+      }
+    },
     "php@8.3": {
       "last_modified": "2024-11-16T04:25:12Z",
       "plugin_version": "0.0.3",
@@ -189,6 +237,54 @@
             }
           ],
           "store_path": "/nix/store/ff8wp3wzc27gpn3p90ng7pal4i1p9pf5-redis-7.2.6"
+        }
+      }
+    },
+    "typesense@latest": {
+      "last_modified": "2024-11-16T04:25:12Z",
+      "resolved": "github:NixOS/nixpkgs/34a626458d686f1b58139620a8b2793e9e123bba#typesense",
+      "source": "devbox-search",
+      "version": "27.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/xmc22h78aizn7l1i2y3ygmfxqk1q77rc-typesense-27.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/xmc22h78aizn7l1i2y3ygmfxqk1q77rc-typesense-27.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/nqp35xy5ih4swx8v4mcaypcjx3hiiqpc-typesense-27.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/nqp35xy5ih4swx8v4mcaypcjx3hiiqpc-typesense-27.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/rwaqpm5rb1yhhmam6vm0rklgbhyw036i-typesense-27.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/rwaqpm5rb1yhhmam6vm0rklgbhyw036i-typesense-27.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/d3q71fndhjbn0m0p7151azmigagdp6y3-typesense-27.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/d3q71fndhjbn0m0p7151azmigagdp6y3-typesense-27.1"
         }
       }
     }

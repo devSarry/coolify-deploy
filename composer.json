@@ -8,21 +8,34 @@
     "require": {
         "php": "^8.2",
         "blade-ui-kit/blade-heroicons": "^2.5",
+        "guzzlehttp/guzzle": "^7.9",
+        "imdbphp/imdbphp": "^v8.2.0",
+        "internachi/blade-alpine-instantsearch": "^0.5.0",
         "laravel/breeze": "^2.2",
         "laravel/framework": "^11.31",
+        "laravel/scout": "^10.11",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.5",
         "livewire/volt": "^1.6",
-        "robsontenorio/mary": "^1.41"
+        "monolog/monolog": "^3.8",
+        "nyholm/psr7": "^1.8",
+        "php-http/curl-client": "^2.3",
+        "php-tmdb/api": "^4",
+        "robsontenorio/mary": "^1.41",
+        "symfony/cache": "^7.1",
+        "symfony/event-dispatcher": "^7.1",
+        "typesense/typesense-php": "^4.9"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.14",
         "fakerphp/faker": "^1.23",
         "laravel/pail": "^1.1",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.1",
-        "phpunit/phpunit": "^11.0.1"
+        "phpunit/phpunit": "^11.0.1",
+        "ext-zlib": "*"
     },
     "autoload": {
         "psr-4": {
