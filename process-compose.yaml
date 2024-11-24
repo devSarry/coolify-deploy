@@ -3,3 +3,7 @@ processes:
     command: "php artisan serve"
   npm-dev:
     command: "npm run dev"
+  typesense:
+    description: "Typesense Search Engine"
+    command: "typesense-server --data-dir ./data --api-key xyz"
+

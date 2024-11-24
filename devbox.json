@@ -1,25 +1,27 @@
 {
-    "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.13.4/.schema/devbox.schema.json",
-    "packages": {
-        "php": "8.3",
-        "nodejs": "18",
-        "redis": "latest",
-        "glibcLocales": {
-            "version": "latest",
-            "platforms": [
-                "x86_64-linux",
-                "aarch64-linux"
-            ]
-        }
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.13.4/.schema/devbox.schema.json",
+  "packages": {
+    "php":    "8.3",
+    "nodejs": "18",
+    "redis":  "latest",
+    "glibcLocales": {
+      "version": "latest",
+      "platforms": [
+        "x86_64-linux",
+        "aarch64-linux"
+      ]
     },
-    "shell": {
-        "init_hook": [
-            "echo 'Welcome to devbox!' > /dev/null",
-            "alias art=\"php artisan\""
-        ],
-        "scripts": {
-            "db:migrate": "php artisan migrate",
-            "dev": "composer run dev"
-        }
+    "typesense":             "latest",
+    "php83Extensions.redis": "latest"
+  },
+  "shell": {
+    "init_hook": [
+      "echo 'Welcome to devbox!' > /dev/null",
+      "alias art=\"php artisan\""
+    ],
+    "scripts": {
+      "db:migrate": "php artisan migrate",
+      "dev":        "composer run dev"
     }
+  }
 }

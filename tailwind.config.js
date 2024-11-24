@@ -3,6 +3,34 @@ import forms from '@tailwindcss/forms';
 
 /** @type {import('tailwindcss').Config} */
 export default {
+    daisyui: {
+        themes: [
+            {
+                mytheme: {
+                    "primary": "#fce969",
+                    "primary-content": "#041509",
+                    "secondary": "#ce89fb",
+                    "secondary-content": "#0f0715",
+                    "accent": "#f5c173",
+                    "accent-content": "#150e05",
+                    "neutral": "#262931",
+                    "neutral-content": "#cfd0d2",
+                    "base-100": "#172f3c",
+                    "base-200": "#122733",
+                    "base-300": "#0e202a",
+                    "base-content": "#ccd1d5",
+                    "info": "#2563EB",
+                    "info-content": "#d2e2ff",
+                    "success": "#16A34A",
+                    "success-content": "#000a02",
+                    "warning": "#D97706",
+                    "warning-content": "#110500",
+                    "error": "#922626",
+                    "error-content": "#ffd9d4"
+                }
+            },
+            "light", "dark", "cupcake"],
+    },
     content: [
 		'./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
 		 './storage/framework/views/*.php',
@@ -10,6 +38,7 @@ export default {
 		 "./vendor/robsontenorio/mary/src/View/Components/**/*.php"
 	],
     theme: {
+
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
@@ -34,13 +63,14 @@ export default {
             "brand-cyan": "#588B8B",
             "brand-tangerine": "#F28F3B",
             "brand-jasper": "#C8553D",
-            "brand-purple": "E8D7FF"
+            "brand-purple": "#E8D7FF"
 
         }
     },
 
     plugins: [
 		forms,
-		require("daisyui")
+		require("daisyui"),
+        require('flowbite/plugin')
 	],
 };

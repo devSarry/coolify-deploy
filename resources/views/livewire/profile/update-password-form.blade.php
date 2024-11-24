@@ -50,31 +50,54 @@ $updatePassword = function () {
         </p>
     </header>
 
-    <form wire:submit="updatePassword" class="mt-6 space-y-6">
-        <div>
-            <x-input-label for="update_password_current_password" :value="__('Current Password')" />
-            <x-text-input wire:model="current_password" id="update_password_current_password" name="current_password" type="password" class="mt-1 block w-full" autocomplete="current-password" />
-            <x-input-error :messages="$errors->get('current_password')" class="mt-2" />
-        </div>
+    <x-mary-form wire:submit="updatePassword" class="mt-6 space-y-6">
+        {{-- Full error bag --}}
+        <x-mary-errors title="Oops!" description="Please fix the issues below." icon="o-face-frown" />
 
-        <div>
-            <x-input-label for="update_password_password" :value="__('New Password')" />
-            <x-text-input wire:model="password" id="update_password_password" name="password" type="password" class="mt-1 block w-full" autocomplete="new-password" />
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+        {{-- Current Password --}}
+        <x-mary-input
+            label="{{ __('Current Password') }}"
+            wire:model="current_password"
+            id="update_password_current_password"
+            name="current_password"
+            type="password"
+            placeholder="{{ __('Enter your current password') }}"
+            icon-right="o-key"
+        />
 
-        <div>
-            <x-input-label for="update_password_password_confirmation" :value="__('Confirm Password')" />
-            <x-text-input wire:model="password_confirmation" id="update_password_password_confirmation" name="password_confirmation" type="password" class="mt-1 block w-full" autocomplete="new-password" />
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
+        {{-- New Password --}}
+        <x-mary-input
+            label="{{ __('New Password') }}"
+            wire:model="password"
+            id="update_password_password"
+            name="password"
+            type="password"
+            placeholder="{{ __('Enter your new password') }}"
+            icon-right="o-key"
+        />
 
-        <div class="flex items-center gap-4">
-            <x-primary-button>{{ __('Save') }}</x-primary-button>
+        {{-- Confirm Password --}}
+        <x-mary-input
+            label="{{ __('Confirm Password') }}"
+            wire:model="password_confirmation"
+            id="update_password_password_confirmation"
+            name="password_confirmation"
+            type="password"
+            placeholder="{{ __('Confirm your new password') }}"
+            icon-right="o-key"
+        />
 
+        {{-- Form Actions --}}
+        <x-slot:actions>
+            <x-mary-button
+                label="{{ __('Save') }}"
+                class="btn-primary"
+                type="submit"
+                spinner="updatePassword"
+            />
             <x-action-message class="me-3" on="password-updated">
                 {{ __('Saved.') }}
             </x-action-message>
-        </div>
-    </form>
+        </x-slot:actions>
+    </x-mary-form>
 </section>
