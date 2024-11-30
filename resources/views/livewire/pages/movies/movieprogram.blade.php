@@ -20,8 +20,15 @@ mount(function () {
             ->with('movie')
             ->orderBy('scheduled_time')
             ->get();
-
+    } else {
+        $this->scheduled_movies = auth()->user()
+            ->scheduledMovies()
+            ->with('movie')
+            ->orderBy('scheduled_time')
+            ->get();
     }
+
+
 
 
 
