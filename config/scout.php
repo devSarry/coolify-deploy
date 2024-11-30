@@ -258,7 +258,7 @@ return [
                         ],
                         [
                             "name" => "cast",
-                            "type" => "string[]",
+                            "type" => "string",
                             "facet" => true,
                         ],
                     ],
