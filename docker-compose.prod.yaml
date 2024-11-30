@@ -21,6 +21,7 @@ services:
   app:
     container_name: app
     image: 'ghcr.io/devsarry/coolify-deploy:main'
+    pull_policy: 'always'
     volumes:
       - './storage:/var/www/html/storage'
       - './database:/var/www/html/sqlite'
