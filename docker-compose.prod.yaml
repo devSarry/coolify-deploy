@@ -30,7 +30,7 @@ services:
     ports:
       - '${APP_PORT:-8000}:8080'
     volumes:
-      - './:/var/www/html'
+      - './storage:/var/www/html/storage'
       - './database:/var/www/html/sqlite'
     environment:
       PHP_FPM_POOL_NAME: "app"
