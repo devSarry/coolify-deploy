@@ -27,8 +27,6 @@ services:
     depends_on:
       - redis
       - typesense
-    ports:
-      - '${APP_PORT:-8000}:8080'
     volumes:
       - './storage:/var/www/html/storage'
       - './database:/var/www/html/database'
