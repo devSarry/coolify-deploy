@@ -18,6 +18,8 @@ services:
         - 'http://localhost:8108/health'
       retries: 5
       timeout: 7s
+    networks:
+      - app_network
   app:
     container_name: app
     image: 'ghcr.io/devsarry/coolify-deploy:main'
@@ -68,6 +70,16 @@ services:
       MAIL_FROM_ADDRESS: '${MAIL_FROM_ADDRESS}'
       MAIL_FROM_NAME: '${MAIL_FROM_NAME}'
       VITE_APP_NAME: '${APP_NAME}'
+      TMDB_API_KEY: '${TMDB_API_KEY}'
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
+
+
+
 #  horizon:
 #    image: 'ghcr.io/devsarry/coolify-deploy:main'
 #    command: [ "php", "/var/www/html/artisan", "horizon" ]
