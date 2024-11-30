@@ -27,12 +27,4 @@ USER www-data
 RUN composer install --no-dev --optimize-autoloader --no-interaction && \
     npm install && npm run build
 
-# Set file permissions for storage and cache
-RUN chmod -R 775 storage bootstrap/cache && \
-    chown -R www-data:www-data storage bootstrap/cache
 
-# Expose the default HTTP port
-EXPOSE 80
-
-# Start Nginx and PHP-FPM using S6 overlay
-CMD ["/init"]
