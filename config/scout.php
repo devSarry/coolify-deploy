@@ -229,7 +229,7 @@ return [
                         ],
                         [
                             "name" => "genres",
-                            "type" => "string[]",
+                            "type" => "string",
                             "facet" => true,
                         ],
                         [
