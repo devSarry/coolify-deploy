@@ -35,4 +35,4 @@ RUN chmod -R 775 storage bootstrap/cache && \
 EXPOSE 80
 
 # Start Nginx and PHP-FPM using S6 overlay
-CMD ["init"]
+CMD ["/init"]
