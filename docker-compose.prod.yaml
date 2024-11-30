@@ -31,7 +31,7 @@ services:
       - '${APP_PORT:-8000}:8080'
     volumes:
       - './storage:/var/www/html/storage'
-      - './database:/var/www/html/sqlite'
+      - './database:/var/www/html/database'
     environment:
       PHP_FPM_POOL_NAME: "app"
       AUTORUN_ENABLED: 'true'
@@ -51,7 +51,7 @@ services:
       LOG_DEPRECATIONS_CHANNEL: '${LOG_DEPRECATIONS_CHANNEL}'
       LOG_LEVEL: '${LOG_LEVEL}'
       DB_CONNECTION: sqlite
-      DB_DATABASE: /var/www/html/sqlite/database.sqlite
+      DB_DATABASE: /var/www/html/database/database.sqlite
       SESSION_DRIVER: '${SESSION_DRIVER}'
       SESSION_LIFETIME: '${SESSION_LIFETIME}'
       SESSION_ENCRYPT: '${SESSION_ENCRYPT}'
@@ -87,7 +87,7 @@ services:
     stop_signal: SIGTERM # Set this for graceful shutdown if you're using fpm-apache or fpm-nginx
     volumes:
       - './storage:/var/www/html/storage'
-      - './database:/var/www/html/sqlite'
+      - './database:/var/www/html/database'
     healthcheck:
       # This is our native healthcheck script for the queue
       test: ["CMD", "healthcheck-queue"]
@@ -97,7 +97,7 @@ services:
       - typesense
     environment:
       DB_CONNECTION: sqlite
-      DB_DATABASE: /var/www/html/sqlite/database.sqlite
+      DB_DATABASE: /var/www/html/database/database.sqlite
       REDIS_HOST: 'redis'
       REDIS_CLIENT: 'phpredis'
       REDIS_PASSWORD: 'redispassword'
