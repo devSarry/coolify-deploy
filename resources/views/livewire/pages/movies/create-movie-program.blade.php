@@ -40,7 +40,7 @@ $addMovieForm = function () {
 
     $this->success('Movie added to calendar');
 
-    $this->redirect('/movies');
+    $this->redirect('/program');
 }
 
 ?>
