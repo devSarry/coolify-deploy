@@ -13,7 +13,6 @@ layout('layouts.app');
 
 mount(function () {
     if (!auth()->check() && request()->routeIs('public-movie-program')) {
-
         $this->scheduled_movies = MovieProgram::where('hash_id', request('id'))
             ->firstOr(fn() => redirect()->route('home'))
             ->scheduledMovies()
@@ -27,11 +26,6 @@ mount(function () {
             ->orderBy('scheduled_time')
             ->get();
     }
-
-
-
-
-
 });
 
 ?>
