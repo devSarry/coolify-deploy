@@ -7,7 +7,7 @@ use function Livewire\Volt\layout;
 use function Livewire\Volt\rules;
 use function Livewire\Volt\state;
 
-layout('layouts.guest');
+layout('layouts.app');
 
 state(['email' => '']);
 
@@ -36,26 +36,51 @@ $sendPasswordResetLink = function () {
 
 ?>
 
-<div>
-    <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
-        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-    </div>
+<section class="py-8">
+    <header>
+        <h2 class="text-lg font-bold text-gray-100">
+            {{ __('Forgot Password') }}
+        </h2>
 
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+        <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+            {{ __('Forgot your password? No problem. Just provide your email address, and we will email you a password reset link.') }}
+        </p>
+    </header>
 
-    <form wire:submit="sendPasswordResetLink">
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input wire:model="email" id="email" class="block mt-1 w-full" type="email" name="email" required autofocus />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+    <x-mary-form wire:submit="sendPasswordResetLink" class="mt-6 space-y-6">
+        {{-- Full error bag --}}
+        <x-mary-errors title="Oops!" description="Please fix the issues below." icon="o-face-frown" />
 
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Email Password Reset Link') }}
-            </x-primary-button>
-        </div>
-    </form>
-</div>
+        {{-- Email Address --}}
+        <x-mary-input
+            label="{{ __('Email Address') }}"
+            wire:model="email"
+            id="forgot_password_email"
+            name="email"
+            type="email"
+            placeholder="{{ __('Enter your email') }}"
+            icon-right="o-envelope"
+        />
+
+        {{-- Session Status --}}
+        @if (session('status'))
+            <x-mary-alert
+                type="success"
+                title="Success"
+                message="{{ session('status') }}"
+                icon="o-check-circle"
+            />
+        @endif
+
+        {{-- Form Actions --}}
+        <x-slot:actions>
+            <x-mary-button
+                label="{{ __('Email Password Reset Link') }}"
+                class="btn-primary"
+                type="submit"
+                spinner="sendPasswordResetLink"
+            />
+        </x-slot:actions>
+    </x-mary-form>
+</section>
+

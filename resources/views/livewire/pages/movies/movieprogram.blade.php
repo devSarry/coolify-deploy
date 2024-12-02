@@ -13,7 +13,6 @@ layout('layouts.app');
 
 mount(function () {
     if (!auth()->check() && request()->routeIs('public-movie-program')) {
-
         $this->scheduled_movies = MovieProgram::where('hash_id', request('id'))
             ->firstOr(fn() => redirect()->route('home'))
             ->scheduledMovies()
@@ -27,30 +26,18 @@ mount(function () {
             ->orderBy('scheduled_time')
             ->get();
     }
-
-
-
-
-
 });
+
+
 
 ?>
 
 <div class="container mx-auto">
     <x-mary-header title="Movie Program"/>
 
-    <x-mary-header size="text-inherit" separator progress-indicator>
-        {{-- SEARCH --}}
-        <x-slot:title>
-            <x-mary-input placeholder="Search ..." icon="o-magnifying-glass">
-            </x-mary-input>
-        </x-slot:title>
+    <livewire:components.movie-search/>
 
-        {{-- SORT --}}
-        <x-slot:actions>
-            <livewire:components.movie-search/>
-        </x-slot:actions>
-    </x-mary-header>
+    <hr class="my-3" />
 
     <x-mary-card>
         @forelse($scheduled_movies as $scheduledMovie)

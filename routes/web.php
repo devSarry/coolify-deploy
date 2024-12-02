@@ -7,11 +7,14 @@ Route::view('/', 'welcome');
 
 Route::view('/poster', 'poster' );
 
-Volt::route('/movies', 'pages.movies.movieprogram')
-    ->name('movies');
+Volt::route('/program', 'pages.movies.movieprogram')
+    ->name('program');
 
-Volt::route('/movies/{id}', 'pages.movies.movieprogram')
+Volt::route('/program/{id}', 'pages.movies.movieprogram')
     ->name('public-movie-program');
+
+Volt::route('/movie/{id}', 'pages.movies.create-movie-program')
+    ->name('public-movie');
 
 
 Route::view('dashboard', 'dashboard')
