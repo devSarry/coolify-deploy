@@ -13,7 +13,7 @@ Volt::route('/program', 'pages.movies.movieprogram')
 Volt::route('/program/{id}', 'pages.movies.movieprogram')
     ->name('public-movie-program');
 
-Volt::route('/movie/{id}', 'pages.movies.movie')
+Volt::route('/movie/{id}', 'pages.movies.create-movie-program')
     ->name('public-movie');
 
 

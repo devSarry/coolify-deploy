@@ -17,6 +17,7 @@ $movieSearch = function () {
 
 $setSelectedMovie = function (SearchableMovie $movie) {
     $this->selected_movie = $movie;
+
 };
 
 on(['back-to-movies-search' => function () {
@@ -58,22 +59,25 @@ on(['hide-movie-search' => function () {
                     <li
                         class="flex items-center gap-4 p-4 border-b last:border-b-0 hover:bg-gray-100 cursor-pointer"
                         wire:click="setSelectedMovie({{ $movie }})"
+
                     >
-                        {{-- Poster --}}
-                        <img
-                            src="{{ $movie->poster_url }}"
-                            alt="{{ $movie->primary_title }} Poster"
-                            class="w-12 h-16 object-cover rounded"
-                        />
-                        {{-- Movie Info --}}
-                        <div>
-                            <h3 class="text-sm font-medium text-gray-900 dark:text-gray-100">
-                                {{ $movie->primary_title }}
-                            </h3>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">
-                                {{ $movie->release_date->format('Y') }}
-                            </p>
-                        </div>
+                       <a href="movie/{{ $movie->id }}" wire:navigate.hover>
+                           {{-- Poster --}}
+                           <img
+                               src="{{ $movie->poster_url }}"
+                               alt="{{ $movie->primary_title }} Poster"
+                               class="w-12 h-16 object-cover rounded"
+                           />
+                           {{-- Movie Info --}}
+                           <div>
+                               <h3 class="text-sm font-medium text-gray-900 dark:text-gray-100">
+                                   {{ $movie->primary_title }}
+                               </h3>
+                               <p class="text-xs text-gray-500 dark:text-gray-400">
+                                   {{ $movie->release_date->format('Y') }}
+                               </p>
+                           </div>
+                       </a>
                     </li>
                 @endforeach
             </ul>
