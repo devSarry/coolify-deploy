@@ -74,7 +74,7 @@ on(['hide-movie-search' => function () {
                                    {{ $movie->primary_title }}
                                </h3>
                                <p class="text-xs text-gray-500 dark:text-gray-400">
-                                   {{ $movie->release_date->format('Y') }}
+                                   {{ $movie->release_date ? $movie->release_date->format('Y') : 'N/A' }}
                                </p>
                            </div>
                        </a>
