@@ -1,9 +1,11 @@
 <?php
 
+use App\Models\ScheduledMovie;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
-Route::view('/', 'welcome');
+Route::view('/', 'welcome')
+    ->name('home');
 
 Route::view('/poster', 'poster' );
 
@@ -13,8 +15,16 @@ Volt::route('/program', 'pages.movies.movieprogram')
 Volt::route('/program/{id}', 'pages.movies.movieprogram')
     ->name('public-movie-program');
 
-Volt::route('/movie/{id}', 'pages.movies.create-movie-program')
-    ->name('public-movie');
+Volt::route('/movie/{id}', 'pages.scheduled-movie.createAndEdit')
+    ->name('scheduled-move-create');
+
+Volt::route('/scheduled-move/{id}/edit', 'pages.scheduled-movie.createAndEdit')
+    ->middleware(['auth', 'verified'])
+    ->name('scheduled-move-edit');
+
+
+
+
 
 
 Route::view('dashboard', 'dashboard')

@@ -13,25 +13,6 @@ document.addEventListener('livewire:navigated', () => {
 })
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    const navbar = document.querySelector('nav');
-    const mainContent = document.querySelector('main');
 
-    if (navbar && mainContent) {
-        const navbarHeight = navbar.offsetHeight;
-        mainContent.style.marginTop = `${navbarHeight}px`;
-    }
-});
 
-const adjustMainMargin = () => {
-    const navbar = document.querySelector('nav');
-    const mainContent = document.querySelector('main');
 
-    if (navbar && mainContent) {
-        const navbarHeight = navbar.offsetHeight;
-        mainContent.style.marginTop = `${navbarHeight}px`;
-    }
-};
-
-window.addEventListener('resize', adjustMainMargin);
-document.addEventListener('DOMContentLoaded', adjustMainMargin);

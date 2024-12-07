@@ -17,7 +17,7 @@ $login = function () {
 
     Session::regenerate();
 
-    $this->redirectIntended(default: route('movies', absolute: false), navigate: true);
+    $this->redirectIntended(default: route('program', absolute: false), navigate: true);
 };
 
 ?>

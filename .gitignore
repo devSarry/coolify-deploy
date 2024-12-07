@@ -26,3 +26,4 @@ coolify_deploy
 /.devbox/
 /data
 /sail-typesense
+.env.prod

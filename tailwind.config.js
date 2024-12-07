@@ -1,5 +1,6 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
+import colors from 'tailwindcss/colors';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -15,7 +16,7 @@ export default {
                     "accent-content": "#150e05",
                     "neutral": "#262931",
                     "neutral-content": "#cfd0d2",
-                    "base-100": "#172f3c",
+                    "base-100": "#1e3c4d",
                     "base-200": "#122733",
                     "base-300": "#0e202a",
                     "base-content": "#ccd1d5",
@@ -63,7 +64,14 @@ export default {
             "brand-cyan": "#588B8B",
             "brand-tangerine": "#F28F3B",
             "brand-jasper": "#C8553D",
-            "brand-purple": "#E8D7FF"
+            "brand-purple": "#E8D7FF",
+            black: colors.black,
+            white: colors.white,
+            gray: colors.slate,
+            green: colors.emerald,
+            purple: colors.violet,
+            yellow: colors.amber,
+            pink: colors.fuchsia,
 
         }
     },
