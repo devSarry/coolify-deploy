@@ -27,3 +27,6 @@ coolify_deploy
 /data
 /sail-typesense
 .env.prod
+
+public/vendor/telescope/
+public/vendor/log-viewer/

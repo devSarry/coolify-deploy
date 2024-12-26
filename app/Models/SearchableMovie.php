@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Facades\Log;
 use Laravel\Scout\Searchable;
 
 class SearchableMovie extends Model
@@ -54,17 +55,26 @@ class SearchableMovie extends Model
         ];
     }
 
-    public function toSearchableArray()
+    public function toSearchableArray(): array
     {
-        return array_merge($this->toArray(), [
+        return [
             "id" => (string) $this->id,
-            "vote_average" => (float) $this->vote_average,
-            "imdb_rating" => (float) $this->imdb_rating,
+            "tmdb_id" => $this->tmdb_id,
+            "imdb_id" => (string) $this->imdb_id,
+            "primary_title" => $this->primary_title,
+            "original_title" => $this->original_title,
             "vote_count" => (int) $this->vote_count,
             "imdb_votes" => (int) $this->imdb_votes,
+            "vote_average" => (float) $this->vote_average ?? 0,
+            "imdb_rating" => (float) $this->imdb_rating,
+            "poster_path" => $this->posterUrl(),
             "runtime_minutes" => (int) $this->runtime_minutes,
+            "tagline" => $this->tagline,
+            "original_language" => $this->original_language,
+            "genres" => $this->movieGenre->pluck('name')->join(','), // Use movieGenre relationship
+            "cast" => $this->castMembers->pluck('name')->join(','), // Use castMembers relationship
             "release_date" => $this->release_date ? $this->release_date->timestamp : 0,
-            ]);
+        ];
     }
 
     protected function posterUrl(): Attribute

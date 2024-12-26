@@ -24,8 +24,8 @@
 
 
     {{-- The main content with `full-width` --}}
-    <main class="px-5 md:px-60 mt-12">
-        <div class="max-w-screen-sm mx-auto pt-4">
+    <main class="px-5 md:px-60 mt-20">
+        <div class="max-w-screen-sm mx-auto">
             {{ $slot }}
         </div>
     </main>

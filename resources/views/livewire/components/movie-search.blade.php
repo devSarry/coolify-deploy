@@ -12,7 +12,12 @@ state(['movie_search' => '', 'results' => null, 'modal' => false, 'selected_movi
 $movieSearch = function () {
     $this->show_results = true;
     $this->selected_movie = null;
-    $this->results= SearchableMovie::search($this->movie_search)->take(25)->get();
+    $this->results = SearchableMovie::search($this->movie_search)
+        ->options([
+            "query_by" => "primary_title,original_title",
+            ])
+        ->take(25)
+        ->get();
 };
 
 $setSelectedMovie = function (SearchableMovie $movie) {
@@ -30,7 +35,7 @@ on(['hide-movie-search' => function () {
 
 ?>
 
-<div   x-data="{ inputActive: false }" class="relative">
+<div x-data="{ inputActive: false }" class="relative">
     {{-- Search Bar --}}
     <x-mary-form wire:submit.prevent="movieSearch">
         <x-mary-input
@@ -61,23 +66,23 @@ on(['hide-movie-search' => function () {
                         wire:click="setSelectedMovie({{ $movie }})"
 
                     >
-                       <a href="movie/{{ $movie->id }}" wire:navigate.hover>
-                           {{-- Poster --}}
-                           <img
-                               src="{{ $movie->poster_url }}"
-                               alt="{{ $movie->primary_title }} Poster"
-                               class="w-12 h-16 object-cover rounded"
-                           />
-                           {{-- Movie Info --}}
-                           <div>
-                               <h3 class="text-sm font-medium text-gray-900 dark:text-gray-100">
-                                   {{ $movie->primary_title }}
-                               </h3>
-                               <p class="text-xs text-gray-500 dark:text-gray-400">
-                                   {{ $movie->release_date ? $movie->release_date->format('Y') : 'N/A' }}
-                               </p>
-                           </div>
-                       </a>
+                        <a href="movie/{{ $movie->id }}" wire:navigate.hover>
+                            {{-- Poster --}}
+                            <img
+                                src="{{ $movie->poster_url }}"
+                                alt="{{ $movie->primary_title }} Poster"
+                                class="w-12 h-16 object-cover rounded"
+                            />
+                            {{-- Movie Info --}}
+                            <div>
+                                <h3 class="text-sm font-medium text-gray-900 dark:text-gray-100">
+                                    {{ $movie->primary_title }}
+                                </h3>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">
+                                    {{ $movie->release_date ? $movie->release_date->format('Y') : 'N/A' }}
+                                </p>
+                            </div>
+                        </a>
                     </li>
                 @endforeach
             </ul>

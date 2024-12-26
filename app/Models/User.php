@@ -24,6 +24,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_program_public'
     ];
 
     /**
@@ -73,5 +74,16 @@ class User extends Authenticatable
         abort_if(is_null($movieProgram), 500, 'No movie program found for the authenticated user');
 
         return $movieProgram->id;
+    }
+
+    public function getDefaultMovieProgram(): MovieProgram
+    {
+        // Fetch the MovieProgram ID for the authenticated user
+        // Adjust the query logic as needed
+        $movieProgram = $this->movieProgram()->latest()->first();
+
+        abort_if(is_null($movieProgram), 500, 'No movie program found for the authenticated user');
+
+        return $movieProgram;
     }
 }

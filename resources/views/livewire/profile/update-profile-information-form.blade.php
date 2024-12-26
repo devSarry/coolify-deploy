@@ -9,8 +9,8 @@ use Illuminate\Validation\Rule;
 use function Livewire\Volt\state;
 
 state([
-    'name' => fn () => auth()->user()->name,
-    'email' => fn () => auth()->user()->email
+    'name' => fn() => auth()->user()->name,
+    'email' => fn() => auth()->user()->email
 ]);
 
 $updateProfileInformation = function () {
@@ -50,35 +50,36 @@ $sendVerification = function () {
 
 <section>
     <header>
-        <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
+        <h2 class="text-xl">
             {{ __('Profile Information') }}
         </h2>
 
-        <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
+        <p class="mt-1 text-sm ">
             {{ __("Update your account's profile information and email address.") }}
         </p>
     </header>
 
-    <form wire:submit="updateProfileInformation" class="mt-6 space-y-6">
+    <x-mary-form wire:submit="updateProfileInformation" class="mt-6 space-y-6">
+        {{-- Full error bag --}}
+        <x-mary-errors title="Oops!" description="Please fix the issues below." icon="o-face-frown" />
+
         <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input wire:model="name" id="name" name="name" type="text" class="mt-1 block w-full" required autofocus autocomplete="name" />
-            <x-input-error class="mt-2" :messages="$errors->get('name')" />
+            <x-mary-input wire:model="name" id="name" name="name" label="{{ __('Name') }}" placeholder="{{ __('Enter your name') }}" icon="o-user" autofocus autocomplete="name" required />
         </div>
 
         <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input wire:model="email" id="email" name="email" type="email" class="mt-1 block w-full" required autocomplete="username" />
-            <x-input-error class="mt-2" :messages="$errors->get('email')" />
+            <x-mary-input wire:model="email" id="email" name="email" label="{{ __('Email') }}" placeholder="{{ __('Enter your email') }}" icon="o-envelope" autocomplete="username" required />
 
             @if (auth()->user() instanceof MustVerifyEmail && ! auth()->user()->hasVerifiedEmail())
                 <div>
                     <p class="text-sm mt-2 text-gray-800 dark:text-gray-200">
                         {{ __('Your email address is unverified.') }}
 
-                        <button wire:click.prevent="sendVerification" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
+                        <x-mary-button wire:click="sendVerification"
+                                       class="btn-link"
+                                       spinner="sendVerification">
                             {{ __('Click here to re-send the verification email.') }}
-                        </button>
+                        </x-mary-button>
                     </p>
 
                     @if (session('status') === 'verification-link-sent')
@@ -90,12 +91,12 @@ $sendVerification = function () {
             @endif
         </div>
 
-        <div class="flex items-center gap-4">
-            <x-primary-button>{{ __('Save') }}</x-primary-button>
+        <x-slot:actions>
+            <x-mary-button label="{{ __('Save') }}" class="btn-primary" type="submit" spinner="updateProfileInformation" />
 
             <x-action-message class="me-3" on="profile-updated">
                 {{ __('Saved.') }}
             </x-action-message>
-        </div>
-    </form>
+        </x-slot:actions>
+    </x-mary-form>
 </section>

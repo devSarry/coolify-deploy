@@ -221,52 +221,60 @@ return [
                             "type" => "int64", // Unix timestamp
                             "sort" => true,
                             "facet" => true,
-                        ],
-                        [
-                            "name" => "runtime_minutes",
-                            "type" => "int64", // Integer field
-                            "facet" => true,
+                            "optional" => true,
                         ],
                         [
                             "name" => "genres",
                             "type" => "string",
                             "facet" => true,
-                        ],
-                        [
-                            "name" => "imdb_rating",
-                            "type" => "float", // Decimal field
-                            "sort" => true,
-                        ],
-                        [
-                            "name" => "imdb_votes",
-                            "type" => "int64", // Integer field
-                            "sort" => true,
-                        ],
-                        [
-                            "name" => "vote_average",
-                            "type" => "float", // Decimal field
-                            "sort" => true,
-                        ],
-                        [
-                            "name" => "vote_count",
-                            "type" => "int64", // Integer field
-                            "sort" => true,
-                        ],
-                        [
-                            "name" => "poster_path",
-                            "type" => "string",
+                            "optional" => true,
                         ],
                         [
                             "name" => "cast",
                             "type" => "string",
                             "facet" => true,
                         ],
+                        [
+                            "name" => "vote_count",
+                            "type" => "int64",
+                            "facet" => false,
+                            "sort" => true,
+                            "index" => false,
+                        ],
+                        [
+                            "name" => "imdb_votes",
+                            "type" => "int64",
+                            "facet" => false,
+                            "index" => true,
+                            "sort" => true,
+                        ],
+                        [
+                            "name" => "vote_average",
+                            "type" => "float",
+                            "facet" => false,
+                            "index" => false,
+                            "sort" => true,
+                        ],
+                        [
+                            "name" => "imdb_rating",
+                            "type" => "float",
+                            "facet" => false,
+                            "index" => false,
+                            "sort" => true,
+                        ],
+                        [
+                            "name" => "runtime_minutes",
+                            "type" => "int64",
+                            "facet" => false,
+                            "index" => false,
+                        ],
                     ],
-                    "default_sorting_field" => "release_date",
+                    "default_sorting_field" => "imdb_votes",
                 ],
                 "search-parameters" => [
                     "query_by" => "primary_title,original_title,tagline,cast", // Support for querying by multiple fields
-                    "sort_by" => "imdb_votes:desc",   // Default sorting by rating
+                    "query_by_weights" => "10,10,0.5,5", // Weights for each field
+                    "sort_by" => "vote_count:desc",
                 ],
             ],
         ],
