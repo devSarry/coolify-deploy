@@ -6,3 +6,8 @@ Dockerfile
 docker-*.yml
 .gitlab-ci.yml
 .spin*
+node_modules
+/vendor
+sail-typesense
+database/database.sqlite
+.devbox
