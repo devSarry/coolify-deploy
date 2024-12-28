@@ -16,6 +16,10 @@ RUN curl -sL https://deb.nodesource.com/setup_20.x | bash - && \
     git && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
+WORKDIR /var/www/html
+RUN mkdir -p storage/framework/{sessions,views,cache} && \
+    chown -R www-data:www-data storage \
+
 # Add user-specific permissions early
 COPY . /var/www/html
 RUN chown -R www-data:www-data /var/www/html
