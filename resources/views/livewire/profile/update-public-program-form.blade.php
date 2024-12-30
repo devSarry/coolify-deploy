@@ -5,10 +5,11 @@ use function Livewire\Volt\{state, mount};
 state(['makePublic' => null, 'movieProgramHash' => null]);
 
 mount(function () {
-    $this->makePublic = (boolean) auth()->user()->is_program_public;
+    $this->makePublic = (boolean)auth()->user()->getDefaultMovieProgram()->is_public;
 });
 
 $updatePublicProgramVisibility = function () {
+
     auth()->user()->getDefaultMovieProgram()->update([
         'is_public' => $this->makePublic
     ]);
@@ -36,8 +37,36 @@ $updatePublicProgramVisibility = function () {
     />
 
     @if ($makePublic)
-        <div class="mt-4">
-            {{ route('public-movie-program',   auth()->user()->getDefaultMovieProgram()->hash_id) }}
+
+        <div class="w-full max-w-sm" x-data="{
+    url: '{{ route('public-movie-program', auth()->user()->getDefaultMovieProgram()->hash_id) }}',
+    copied: false,
+    copyToClipboard() {
+        navigator.clipboard.writeText(this.url).then(() => {
+            this.copied = true;
+            setTimeout(() => { this.copied = false }, 2000);
+        });
+    }
+}">
+
+            <div class="flex">
+                <x-mary-input id="website-url" type="text" ::value="url">
+                    <x-slot:prepend>
+                        <span class="mx-2">URL</span>
+                    </x-slot:prepend>
+                    <x-slot:append>
+                        <x-mary-button ::class="!copied ? 'btn-base' : 'btn-success'" @click="copyToClipboard"
+                                       ::color="copied ? 'success' : 'info'" class="rounded-s-none"
+                                       ::tooltip="copied ? 'Copied!' : 'Copy link'">
+                        <span :class="{ 'hidden': copied }">
+                            <x-mary-icon name="o-clipboard" class="w-4 h-4"/>
+                        </span>
+                        <span x-show="copied" class="inline-flex items-center">
+                        <x-mary-icon name="o-check" class="w-4 h-4"/>
+                        </span>
+                        </x-mary-button>
+                    </x-slot:append>
+                </x-mary-input>
         </div>
     @endif
 </section>

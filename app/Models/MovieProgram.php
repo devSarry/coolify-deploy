@@ -15,6 +15,7 @@ class MovieProgram extends Model
     protected $fillable = [
         'hash_id',
         'user_id',
+        'is_public'
     ];
 
     public function user(): BelongsTo
