@@ -118,16 +118,18 @@ $removeMovie = function (ScheduledMovie $scheduledMovie) {
                 <div class="text-center py-4 text-neutral-content text-lg font-semibold">Past Movies</div>
                 <hr class="my-4 border-t border-neutral-content/50">
             @endif
-            <a href="{{ route('scheduled-move-create', $scheduledMovie->movie_id ) }}">
                 <x-mary-list-item :item="$scheduledMovie">
                     <x-slot:value>
                         <div class="flex w-full py-2 gap-4 ">
-                            <div class="shrink-0 {{ $scheduledMovie->scheduled_time < now() ? 'opacity-60' : '' }}">
-                                <img src="{{ $scheduledMovie->movie->poster_url }}"
-                                     alt="{{ $scheduledMovie->movie->primary_title }}"
-                                     class="h-32 w-24 object-cover rounded-lg shadow-md"
-                                     loading="lazy"/>
-                            </div>
+                            <a href="{{ route('scheduled-move-create', $scheduledMovie->movie_id ) }}">
+                                <div class="shrink-0 {{ $scheduledMovie->scheduled_time < now() ? 'opacity-60' : '' }}">
+                                    <img src="{{ $scheduledMovie->movie->poster_url }}"
+                                         alt="{{ $scheduledMovie->movie->primary_title }}"
+                                         class="h-32 w-24 object-cover rounded-lg shadow-md"
+                                         loading="lazy"/>
+                                </div>
+                            </a>
+                            <a href="{{ route('scheduled-move-create', $scheduledMovie->movie_id ) }}">
 
                             <div class="flex-1 flex flex-col justify-between md:justify-center min-w-0 {{ $scheduledMovie->scheduled_time < now() ? 'opacity-60' : '' }}">
                                 <h3 class="text-lg font-bold text-wrap text-neutral-content">
@@ -149,7 +151,7 @@ $removeMovie = function (ScheduledMovie $scheduledMovie) {
                                     </div>
                                 @endauth
                             </div>
-
+                            </a>    
                             @auth
                                 <div class="hidden md:flex flex-col gap-2 justify-center {{ $scheduledMovie->scheduled_time < now() ? 'opacity-60' : '' }}">
                                     <x-mary-button size="sm" icon="o-pencil-square" class="btn-neutral"
@@ -177,7 +179,6 @@ $removeMovie = function (ScheduledMovie $scheduledMovie) {
                         </div>
                     </x-slot:value>
                 </x-mary-list-item>
-            </a>
         @empty
             <div class="py-12 text-center">
                 <x-mary-icon name="o-film" class="w-16 h-16 mx-auto text-gray-400 mb-4"/>
