@@ -61,12 +61,13 @@ on(['hide-movie-search' => function () {
              x-cloak>
             <ul>
                 @foreach ($results as $movie)
+                    <a href="movie/{{ $movie->id }}" wire:navigate.hover>
                     <li
                         class="flex items-center gap-4 p-4 border-b last:border-b-0 hover:bg-gray-100 cursor-pointer"
                         wire:click="setSelectedMovie({{ $movie }})"
 
                     >
-                        <a href="movie/{{ $movie->id }}" wire:navigate.hover>
+
                             {{-- Poster --}}
                             <img
                                 src="{{ $movie->poster_url }}"
@@ -82,8 +83,9 @@ on(['hide-movie-search' => function () {
                                     {{ $movie->release_date ? $movie->release_date->format('Y') : 'N/A' }}
                                 </p>
                             </div>
-                        </a>
+
                     </li>
+                    </a>
                 @endforeach
             </ul>
         </div>

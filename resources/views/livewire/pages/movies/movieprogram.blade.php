@@ -80,8 +80,11 @@ $removeMovie = function (ScheduledMovie $scheduledMovie) {
     @if($this->next_movie)
         <x-mary-card class="bg-base-100 mb-8">
             <x-slot:title class="font-bold text-lg">
-                <x-mary-icon name="o-star" class="w-5 h-5 text-yellow-400 inline-block"/>
-                Up Next
+                <div class="flex flex-row justify-center">
+                    <x-mary-icon name="o-star" class="w-5  text-yellow-400 inline-block mr-2"/>
+                    <span>Up Next</span>
+                </div>
+
             </x-slot:title>
             <a href="{{ route('scheduled-move-create', $this->next_movie->movie_id ) }}">
                 <div class="flex w-full py-2 gap-4">
@@ -151,7 +154,7 @@ $removeMovie = function (ScheduledMovie $scheduledMovie) {
                                     </div>
                                 @endauth
                             </div>
-                            </a>    
+                            </a>
                             @auth
                                 <div class="hidden md:flex flex-col gap-2 justify-center {{ $scheduledMovie->scheduled_time < now() ? 'opacity-60' : '' }}">
                                     <x-mary-button size="sm" icon="o-pencil-square" class="btn-neutral"
