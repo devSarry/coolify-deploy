@@ -15,11 +15,7 @@
         <div class="mockup-browser bg-base-300 border">
             <div class="mockup-browser-toolbar">
             </div>
-            <picture>
-                <source media="(min-width:650px)" srcset="{{ Vite::asset('resources/images/screen-shot-program.png') }}">
-                <source media="(min-width:465px)" srcset="{{ Vite::asset('resources/images/screen-shot-program.png') }}">
-                <img src="{{  asset('resources/images/screen-shot-program.png') }}" alt="Flowers" style="width:auto;">
-            </picture>
+            <img src="{{  Vite::asset('resources/images/screen-shot-program.png') }}" alt="Program" style="width:auto;">
         </div>
     </section>
 
