@@ -8,6 +8,7 @@
     "require": {
         "php": "^8.2",
         "blade-ui-kit/blade-heroicons": "^2.5",
+        "brunocfalcao/blade-feather-icons": "^4.0",
         "guzzlehttp/guzzle": "^7.9",
         "imdbphp/imdbphp": "^v8.2.0",
         "internachi/blade-alpine-instantsearch": "^0.5.0",

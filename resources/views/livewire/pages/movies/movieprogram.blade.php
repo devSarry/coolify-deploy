@@ -68,6 +68,26 @@ $removeMovie = function (ScheduledMovie $scheduledMovie) {
 
 <div class="container mx-auto py-8 px-2">
     <x-mary-header title="Movie Program" class="mb-8">
+        @if(auth()->check() && auth()->user()->getDefaultMovieProgram()->is_public)
+            <x-slot:actions>
+                <div x-data="{
+        url: '{{ route('public-movie-program', auth()->user()->getDefaultMovieProgram()->hash_id) }}',
+        copied: false,
+        copyToClipboard() {
+            navigator.clipboard.writeText(this.url).then(() => {
+                this.copied = true;
+                setTimeout(() => { this.copied = false }, 2000);
+            });
+        }
+    }">
+                    <x-mary-button ::class="!copied ? 'btn-primary' : 'btn-success'" icon="feathericon.share" tooltip="Copy to clipboard sharable link" @click="copyToClipboard">
+                        <span x-show="!copied">Copy Link</span>
+                        <span x-show="copied" style="display: none;">Copied!</span>
+                    </x-mary-button>
+                </div>
+            </x-slot:actions>
+        @endif
+
         <x-slot:subtitle>
             Manage your scheduled movies and showtimes
         </x-slot:subtitle>
