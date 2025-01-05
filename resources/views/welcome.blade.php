@@ -18,7 +18,7 @@
             <picture>
                 <source media="(min-width:650px)" srcset="{{ Vite::asset('resources/images/screen-shot-program.png') }}">
                 <source media="(min-width:465px)" srcset="{{ Vite::asset('resources/images/screen-shot-program.png') }}">
-                <img src="{{ Vite::asset('resources/images/screen-shot-program.png') }}" alt="Flowers" style="width:auto;">
+                <img src="{{  asset('resources/images/screen-shot-program.png') }}" alt="Flowers" style="width:auto;">
             </picture>
         </div>
     </section>
